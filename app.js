@@ -9,7 +9,7 @@ const body = document.querySelector("body");
 const mobileMenu = () => {
    menu.classList.toggle("is-active");
    menuLinks.classList.toggle("active");
-   body.style.overflow = "hidden";
+   body.toggle.style.overflow = "hidden";  
 };
 
 menu.addEventListener("click", mobileMenu);

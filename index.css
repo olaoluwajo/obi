@@ -18,6 +18,7 @@
 
 .navigation {
    position: fixed;
+   z-index: 9999;
    padding: 2rem calc((100vw - 1400px) / 2);
    width: 100%;
 }
@@ -66,6 +67,9 @@
    .navigation {
       padding: 0em calc((100vw - 1400px) / 2);
    }
+   .navbar {
+      border-radius: 0;
+   }
 
    .navbar_logo img {
       width: 70%;
@@ -101,7 +105,7 @@
       opacity: 1;
       top: 100%;
       opacity: 1;
-      z-index: 99;
+      z-index: 999;
       height: 100vh;
       font-style: 1.5rem;
       background: var(--almost-black);
@@ -121,7 +125,7 @@
       position: absolute;
       top: 15%;
       right: 5%;
-      transform: translate(5%, 70%);
+      transform: translate(5%, 60%);
    }
 
    #mobile-menu.is-active .bar:nth-child(2) {
@@ -154,6 +158,7 @@
    z-index: 1;
    /* position: absolute; */
    .hero_text {
+      margin-top: 5rem;
       max-width: 799px;
       padding-bottom: 1rem;
    }
@@ -171,14 +176,25 @@
    }
 
    p {
+      max-width: 75%;
       font-size: 16px;
       line-height: 33px;
       font-weight: 400;
    }
 }
 
+.hero_three_head {
+   margin-top: 0.5rem;
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+   img {
+      width: 50%;
+   }
+}
+
 .btn_btn {
-   padding: 1rem 2rem;
+   padding: 1.5rem 3rem;
    border: none;
    border-radius: 40px;
    background-color: var(--blue);
@@ -201,8 +217,19 @@
       }
 
       h1 {
-         font-size: 3rem;
-         line-height: 60px;
+         font-size: 2.5rem;
+         line-height: 50px;
+      }
+      p {
+         max-width: 100%;
+      }
+   }
+   .hero_three_head {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      img {
+         width: 90%;
       }
    }
 }
@@ -213,6 +240,8 @@
    align-items: start;
    justify-content: space-between;
    padding: 2rem calc((100vw - 1400px) / 2);
+   padding-top: 15rem;
+   gap: 5rem;
 
    .home_about_left {
       width: 50%;
@@ -238,49 +267,61 @@
       .home_about_leftSplit {
          display: flex;
          /* justify-content: space-between; */
-         align-items: center;
+         /* align-items: center; */
          margin-top: 3rem;
          gap: 2rem;
 
+         /* / */
+         /**************************  IMAGE HOVER ANIMATION*****************/
+         /**************************  IMAGE HOVER ANIMATION*****************/
+         /*  */
+
          .imgAim {
             position: relative;
-            overflow: hidden;
+            z-index: 0;
+
+            img {
+               width: 100%;
+               height: 100%;
+            }
          }
 
-         .imgAim:before {
-            content: "";
-            position: absolute;
-            top: -100;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background-color: #2708a5e0;
-            transition: transform 0.1s ease-in-out;
-            border-radius: 15px;
-         }
-
-         .imgAim:hover:before {
-            transform: translatex(100%);
-         }
-
-         .imgAim:hover:after {
+         .imgAim:hover::before {
             content: "Act Now";
             display: grid;
             place-content: center;
             color: #fff;
             font-weight: 700;
+            font-size: 24px;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             cursor: pointer;
-            z-index: 1;
+            background-color: #2708a5b3;
+            border-radius: 15px;
+            opacity: 1;
+            transition: opacity 0.6s ease-in-out;
+         }
+
+         .imgAim::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #2708a5e0;
+            border-radius: 15px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
          }
 
          /* .imgAim {
             position: relative;
-            transition: background-color 1s ease-in-out;
+            transition: all 1s ease-in-out;
+            z-index: 1;
          }
 
          .imgAim:hover:before {
@@ -289,6 +330,7 @@
             place-content: center;
             color: #fff;
             font-weight: 700;
+            font-size: 24px;
             position: absolute;
             top: 0;
             left: 0;
@@ -297,12 +339,145 @@
             cursor: pointer;
             background-color: #2708a5e0;
             border-radius: 15px;
-            transition: background-color 1s ease-in-out;
+            transition: all 1s ease-in-out;
          } */
+
+         /***************************** IMAGE HOVER ANIMATION ENDS ***************************/
+
+         ul {
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-top: 1.9rem;
+            li {
+               display: flex;
+               align-items: center;
+               /* justify-content: start; */
+               gap: 1rem;
+               /* padding-block: 0.3rem; */
+            }
+
+            button {
+               padding: 1rem 4rem;
+            }
+         }
       }
    }
 
    .home_about_right {
       width: 50%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 3rem;
+      grid-row-gap: 2rem;
+
+      .mechanical_img,
+      .capentry_img {
+         position: relative;
+         z-index: 0;
+      }
+      .init_img {
+         width: 100%;
+         height: 100%;
+      }
+
+      .mechanical_img:hover::before {
+         content: "Mechanical Engineering";
+         display: grid;
+         place-content: center;
+         color: #fff;
+         font-weight: 700;
+         font-size: 20px;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         cursor: pointer;
+         background-color: #2708a5b3;
+         border-radius: 15px;
+         opacity: 1;
+         transition: opacity 0.6s ease-in-out;
+      }
+      .capentry_img:hover::before {
+         content: "Capentry";
+         display: grid;
+         place-content: center;
+         color: #fff;
+         font-weight: 700;
+         font-size: 20px;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         cursor: pointer;
+         background-color: #2708a5b3;
+         border-radius: 15px;
+         opacity: 1;
+         transition: opacity 0.6s ease-in-out;
+      }
+
+      .mechanical_img::before,
+      .capentry_img::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: #2708a5e0;
+         border-radius: 15px;
+         opacity: 0;
+         transition: opacity 1s ease-in-out;
+      }
+   }
+}
+
+@media (max-width: 767px) {
+   .home_about {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      padding-top: 15rem;
+      gap: 2rem;
+
+      .home_about_left {
+         width: 100%;
+
+         h3 {
+            font-size: 16px;
+         }
+         h1 {
+            font-size: 30px;
+            line-height: 40px;
+         }
+         .home_about_leftSplit {
+            flex-direction: column;
+            margin-top: 3rem;
+            gap: 0rem;
+
+            /**************************  IMAGE HOVER ANIMATION*****************/
+            /**************************  IMAGE HOVER ANIMATION*****************/
+
+            /***************************** IMAGE HOVER ANIMATION ENDS ***************************/
+
+            ul {
+               gap: 0.5rem;
+               button {
+                  margin-top: 0.5rem;
+               }
+            }
+         }
+      }
+
+      .home_about_right {
+         width: 100%;
+         grid-column-gap: 1rem;
+         grid-row-gap: 1rem;
+      }
    }
 }
