@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+   --blue: #2708a5;
+   --brown: #a47449;
+   --white: #fff;
+   --black: #000;
+   --almost-black: #141414;
+}
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: "Montserrat", sans-serif;
+}
+
+.navbar {
+   background: #f9f9f9;
+   /* height: 60px; */
+   padding: 0.5rem calc((100vw - 1400px) / 2);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: relative;
+}
+
+.navbar_logo img {
+   width: 80%;
+   /* padding: 0rem 1rem; */
+}
+
+.navbar_link {
+   color: #000;
+   text-decoration: none;
+   padding: 0rem 2rem;
+   font-weight: 500;
+}
+
+.navbar_link:hover {
+   color: var(--blue);
+}
+
+.navbar_link.navbar_button {
+   padding: 1rem 2rem;
+   background-color: var(--blue);
+   color: var(--white);
+   border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+   body.active {
+      overflow-y: hidden !important;
+   }
+
+   .navbar_link {
+      display: flex;
+      color: var(--white);
+      font-weight: 600;
+      align-items: center;
+      justify-content: center;
+      /* padding: 5rem 0; */
+      /* border: 2px solid #fff; */
+   }
+   .navbar_link.navbar_button {
+      /* padding: 0rem 0; */
+      /* margin-bottom: 10rem; */
+      background-color: transparent;
+      color: var(--white);
+      border-radius: 0;
+   }
+
+   .navbar_menu {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 100px);
+      position: absolute;
+      width: 100%;
+      /* right: -300px; */
+      top: -1000px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      opacity: 0;
+   }
+
+   .navbar_menu.active {
+      opacity: 1;
+      /* gap: 1rem; */
+      /* right: 0; */
+      top: 100%;
+      opacity: 1;
+      z-index: 99;
+      height: 100vh;
+      font-style: 1.5rem;
+      background: var(--almost-black);
+   }
+
+   .navbar_toggle .bar {
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+      background: var(--black);
+      display: block;
+      cursor: pointer;
+   }
+
+   #mobile-menu {
+      position: absolute;
+      top: 15%;
+      right: 5%;
+      transform: translate(5%, 90%);
+   }
+
+   #mobile-menu.is-active .bar:nth-child(2) {
+      opacity: 0;
+   }
+   #mobile-menu.is-active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+   }
+   #mobile-menu.is-active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+   }
+}
