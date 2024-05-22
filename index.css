@@ -564,7 +564,7 @@ body {
 
 .donation_section {
    /* padding-inline: 0em calc((100vw - 1250px) / 3); */
-   padding-bottom: 15rem;
+   padding-bottom: 25rem;
    padding-top: 3rem;
    color: #fff;
    background-image: url(/img/donation-bkg.png);
@@ -624,3 +624,220 @@ body {
       }
    }
 }
+
+@media (max-width: 768px) {
+   .donation_section {
+      padding-inline: 1rem;
+      padding-bottom: 4rem;
+      padding-top: 3rem;
+      text-align: center;
+
+      .donation_content {
+         h1 {
+            font-weight: 600;
+            font-size: 30px;
+         }
+         p {
+            font-size: 17px;
+            line-height: 30px;
+         }
+      }
+
+      .donation_btns {
+         gap: 1rem;
+      }
+   }
+}
+
+.video-section {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: -19rem;
+
+   .video-section-img {
+      position: relative;
+      width: 70%;
+   }
+
+   .lord-icon-div {
+      display: grid;
+      place-content: center;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      position: absolute;
+      z-index: 1;
+      right: 45%;
+   }
+
+   .lord-icon-vid {
+      width: 50px;
+      height: 50px;
+      cursor: progress;
+   }
+}
+
+@media (max-width: 768px) {
+   .video-section {
+      margin-top: 0rem;
+
+      img {
+         width: 100% !important;
+         height: 100%;
+      }
+
+      .lord-icon-div {
+         width: 70px;
+         height: 70px;
+         border-radius: 50%;
+         border: 2px solid #fff;
+         position: absolute;
+         z-index: 1;
+         right: 42%;
+      }
+   }
+}
+
+.explore-cause-section {
+   padding-inline: calc((100vw - 1250px) / 3);
+
+   padding-block: 8rem;
+   display: flex;
+   justify-content: center;
+   /* align-items: center; */
+   flex-direction: column;
+   gap: 5rem;
+
+   .explore-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .explore-left-head {
+         h2 {
+            font-size: 18px;
+            font-weight: 400;
+         }
+         h1 {
+            font-size: 40px;
+            font-weight: 600;
+         }
+      }
+
+      .explore-right-head {
+         border-left: 5px solid #a47449;
+         padding-left: 1rem;
+
+         h3 {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 33px;
+            max-width: 60ch;
+         }
+      }
+   }
+
+   .explore-boxes {
+      display: flex;
+      gap: 3rem;
+
+      .explore-box {
+         position: relative;
+
+         img {
+            width: 100%;
+         }
+
+         .explore-box-content {
+            background: #fff;
+            position: absolute;
+            bottom: 10px;
+            margin: 2rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border-radius: 10px;
+
+            h3 {
+               font-size: 18px;
+               font-weight: 600;
+            }
+            p {
+               font-size: 16px;
+               font-weight: 400;
+               line-height: 25px;
+            }
+
+            img {
+               width: 100%;
+            }
+
+            .box-btn {
+               padding: 1rem 2rem;
+            }
+         }
+
+         &:hover {
+            .explore-box-content {
+               background-color: #2708a5;
+               color: #fff;
+
+               .box-btn {
+                  background-color: #fff;
+                  color: #000;
+               }
+            }
+         }
+      }
+   }
+
+   .bottom-explore {
+      display: flex;
+      align-self: center;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      a {
+         display: flex;
+         gap: 10px;
+         color: #fd810f;
+         font-weight: 500;
+      }
+   }
+}
+
+@media (max-width: 767px) {
+   .explore-cause-section {
+      padding-inline: 1rem;
+
+      padding-block: 3rem;
+      gap: 2rem;
+
+      .explore-heading {
+         flex-direction: column;
+
+         .explore-left-head {
+            h1 {
+               font-size: 30px;
+               margin-block: 1rem;
+            }
+         }
+      }
+
+      .explore-boxes {
+         display: flex;
+         flex-direction: column;
+         gap: 2em;
+      }
+
+
+   }
+}
+
+
+
+
