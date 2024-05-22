@@ -15,11 +15,16 @@
    font-family: "Montserrat", sans-serif;
    list-style-type: none;
 }
+body {
+   overflow-x: hidden;
+}
 
 .navigation {
    position: fixed;
    z-index: 9999;
-   padding: 2rem calc((100vw - 1400px) / 2);
+   /* padding: 0em calc((100vw - 1200px) / 3); */
+
+   padding: 2rem calc((100vw - 1250px) / 3);
    width: 100%;
 }
 .navbar {
@@ -142,8 +147,8 @@
 /* HERO SECTION */
 
 .hero {
-   padding: 0em calc((100vw - 1400px) / 2);
-
+   padding: 0em calc((100vw - 1250px) / 3);
+   /* padding: 0em 8rem; */
    color: #fff;
    background-image: url(/img/obi-hero1.png);
    height: 99vh;
@@ -234,7 +239,10 @@
    }
 }
 .blue-center {
-   padding-left: 8rem;
+   padding: 0em calc((100vw - 1250px) / 3);
+
+   /* padding-left: 8rem; */
+   width: 100%;
 }
 .blue_content {
    background: #2708a5;
@@ -243,7 +251,7 @@
    justify-content: center;
    flex-direction: column;
    margin-top: -100px;
-   width: 25%;
+   width: 30%;
    padding-block: 2rem;
    padding-inline: 2rem;
    gap: 1rem;
@@ -267,7 +275,7 @@
    .blue-centerTop {
       display: flex;
       justify-content: space-between;
-      padding-right: 3rem;
+      padding-right: 4rem;
       align-items: center;
       h2 {
          font-size: 22px;
@@ -311,8 +319,9 @@
    display: flex;
    align-items: start;
    justify-content: space-between;
-   padding: 2rem calc((100vw - 1400px) / 2);
+   padding: 2rem calc((100vw - 1250px) / 3);
    padding-top: 3rem;
+   padding-bottom: 5rem;
    gap: 5rem;
 
    .home_about_left {
@@ -549,6 +558,69 @@
          width: 100%;
          grid-column-gap: 1rem;
          grid-row-gap: 1rem;
+      }
+   }
+}
+
+.donation_section {
+   /* padding-inline: 0em calc((100vw - 1250px) / 3); */
+   padding-bottom: 15rem;
+   padding-top: 3rem;
+   color: #fff;
+   background-image: url(/img/donation-bkg.png);
+   min-height: 300px;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   .donation_content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h3 {
+         font-size: 18px;
+         font-weight: 400;
+      }
+      h1 {
+         font-weight: 600;
+         font-size: 40px;
+      }
+      p {
+         font-size: 18px;
+         font-weight: 400;
+         line-height: 33px;
+         max-width: 50ch;
+         text-align: center;
+      }
+   }
+
+   .donation_btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      font-weight: 600;
+      font-size: 20px;
+
+      .make-donation-btn {
+         background-color: #a47449;
+
+         &:hover {
+            background-color: #fff;
+            color: #a47449;
+         }
+      }
+
+      .about-us-btn {
+         background-color: #fff;
+         color: #000;
       }
    }
 }
