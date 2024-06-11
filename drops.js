@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		const showMenu = () => {
 			clearTimeout(timer);
 			eventsDropInner.style.display = "flex";
-
 		};
 
 		const hideMenu = () => {
