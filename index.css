@@ -183,8 +183,6 @@ a {
 			display: flex !important;
 		}
 
-		
-
 		a,
 		.dropDownBtn-Btn {
 			padding-inline: 1rem;
@@ -254,8 +252,8 @@ a {
 
 		/* min-height: 100vh; */
 
-		a{
-			font-weight:400;
+		a {
+			font-weight: 400;
 		}
 	}
 
@@ -306,7 +304,7 @@ a {
 	/* padding: 0em 8rem; */
 	color: #fff;
 	/* background-image: url(/img/banner-img.png); */
-	height: 99vh;
+	height: 95vh;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -371,23 +369,24 @@ a {
 }
 
 .hero_three_head {
+	align-items: center;
+	display: flex;
+	gap: 2rem;
 	margin-top: 0.5rem;
 	z-index: 2;
-	display: flex;
-	align-items: center;
-	gap: 2rem;
 	img {
 		width: 50%;
 	}
 }
 
 .btn_btn {
-	padding: 1.5rem 3rem;
-	border: none;
-	border-radius: 40px;
 	background-color: var(--blue);
+	border-radius: 40px;
+	border: none;
 	color: var(--white);
 	font-weight: 500;
+	padding: 1rem 3rem;
+	cursor: pointer;
 
 	&:hover {
 		background-color: #4019d9;
@@ -396,8 +395,8 @@ a {
 
 @media screen and (max-width: 768px) {
 	.hero {
-		padding: 0em 1rem;
 		align-items: center;
+		padding: 0em 1rem;
 
 		.hero_text {
 			max-width: 100%;
@@ -451,10 +450,25 @@ a {
 		/* justify-content: center; */
 	}
 
+	.quotation {
+		font-size: 2rem;
+		display: flex;
+	}
+
+	.fa-quote-left {
+		margin-bottom: -2rem;
+		justify-content: flex-start;
+	}
+	.fa-quote-right {
+		margin-top: -2rem;
+		justify-content: flex-end;
+	}
+
 	p {
-		font-size: 18px;
-		font-weight: 400;
-		line-height: 33px;
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 30px;
+		padding-inline-start: 2.1rem;
 	}
 
 	.blue-centerTop {
@@ -511,11 +525,11 @@ a {
 
 	.home_about_left {
 		width: 50%;
-		align-self: end;
+		align-self: start;
 
 		h3 {
-			color: #a47449;
-			letter-spacing: 2px;
+			color: #2708a5;
+			letter-spacing: 0px;
 			font-weight: 500;
 			font-size: 18px;
 		}
@@ -526,7 +540,8 @@ a {
 			margin-block: 10px;
 		}
 		p {
-			font-size: 16px;
+			font-size: 1.0625rem;
+			/* font-size: 17px; */
 			font-weight: 400;
 			line-height: 30px;
 		}
@@ -535,7 +550,7 @@ a {
 			display: flex;
 			/* justify-content: space-between; */
 			/* align-items: center; */
-			margin-top: 3rem;
+			/* margin-top: 3rem; */
 			gap: 2rem;
 
 			/* / */
@@ -616,14 +631,18 @@ a {
 				display: flex;
 				align-items: start;
 				flex-direction: column;
-				justify-content: space-between;
+				gap: 2rem;
 				padding-top: 1.9rem;
 				li {
 					display: flex;
-					align-items: center;
-					/* justify-content: start; */
 					gap: 1rem;
+					align-items: center;
+					justify-content: center;
 					/* padding-block: 0.3rem; */
+
+					p {
+						justify-self: center;
+					}
 				}
 
 				button {
@@ -641,7 +660,9 @@ a {
 		grid-column-gap: 3rem;
 		grid-row-gap: 2rem;
 
-		.mechanical_img,
+		.tailoring_img,
+		.meco_img,
+		.student_img,
 		.capentry_img {
 			position: relative;
 			z-index: 0;
@@ -651,10 +672,14 @@ a {
 			height: 100%;
 		}
 
-		.mechanical_img:hover::before {
-			content: "Mechanical Engineering";
+		.tailoring_img:hover::before,
+		.meco_img:hover::before,
+		.student_img:hover::before,
+		.capentry_img:hover::before {
+			/* content: "Tailoring/ Fashion Design Training "; */
 			display: grid;
 			place-content: center;
+			text-align: center;
 			color: #fff;
 			font-weight: 700;
 			font-size: 20px;
@@ -670,25 +695,21 @@ a {
 			transition: opacity 0.6s ease-in-out;
 		}
 		.capentry_img:hover::before {
-			content: "Capentry";
-			display: grid;
-			place-content: center;
-			color: #fff;
-			font-weight: 700;
-			font-size: 20px;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			cursor: pointer;
-			background-color: #2708a5b3;
-			border-radius: 15px;
-			opacity: 1;
-			transition: opacity 0.6s ease-in-out;
+			content: "Capentry Training";
+		}
+		.tailoring_img:hover::before {
+			content: "Tailoring/ Fashion Design Training ";
+		}
+		.meco_img:hover::before {
+			content: "Mechanic Training";
+		}
+		.student_img:hover::before {
+			content: "Computer Training";
 		}
 
-		.mechanical_img::before,
+		.tailoring_img::before,
+		.meco_img::before,
+		.student_img::before,
 		.capentry_img::before {
 			content: "";
 			position: absolute;
@@ -810,6 +831,11 @@ a {
 		.about-us-btn {
 			background-color: #fff;
 			color: #000;
+			font-weight: 600;
+
+			&:hover{
+				background-color: #ffffffbb;
+			}
 		}
 	}
 }
@@ -920,10 +946,10 @@ a {
 			padding-left: 1rem;
 
 			h3 {
-				font-size: 18px;
+				font-size: 1rem;
 				font-weight: 400;
 				line-height: 33px;
-				max-width: 60ch;
+				max-width: 70ch;
 			}
 		}
 	}
@@ -993,7 +1019,7 @@ a {
 		a {
 			display: flex;
 			gap: 10px;
-			color: #fd810f;
+			color: #2708A5;
 			font-weight: 500;
 		}
 	}

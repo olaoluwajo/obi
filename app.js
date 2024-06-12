@@ -14,7 +14,7 @@ const mobileMenu = () => {
 
 menu.addEventListener("click", mobileMenu);
 
-const images = ['url("/img/banner-img.png")', 'url("/img/banner-img-two.png")', 'url("/img/banner-img-three.png")'];
+const images = ['url("/img/banner-img.png")', 'url("/img/hero-4.png")', 'url("/img/hero-3.png")'];
 
 let currentIndex = 0;
 const heroSection = document.querySelector(".hero");
