@@ -17,6 +17,7 @@
 }
 body {
 	overflow-x: hidden;
+	transition: 1s ease-in-out;
 }
 a {
 	text-decoration: none;
