@@ -16,4 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
            document.getElementById(targetId).classList.remove('hidden');
        });
    });
+
+    
+    
+    
+    
+    
+    
+    
 });
