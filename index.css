@@ -2232,3 +2232,23 @@ footer {
 		background-color: #f9f9f9;
 	}
 }
+
+.privacy-policy {
+	padding-block: 6rem;
+	padding-inline: 12rem;
+
+	h1 {
+		font-size: 2.8125rem;
+	}
+	p {
+		line-height: 2rem;
+		padding-block-start: 2rem;
+	}
+}
+
+@media (max-width: 64rem) {
+	.privacy-policy {
+		padding-block: 4rem;
+		padding-inline: 1rem;
+	}
+}
