@@ -1360,8 +1360,25 @@ footer {
 		border-bottom: 1px solid #f4f4f4;
 		/* padding: 0 20px; */
 
+		.footer-quick {
+			/* flex: 1 1 10%; */
+			/* align-self: end; */
+			display: flex;
+			flex-direction: column;
+			justify-content: start;
+			align-items: center;
+		}
+
+		.footer-quick-links {
+			display: flex;
+			gap: 20px;
+			width: 100%;
+
+			/* flex-direction: column; */
+		}
+
 		.footer-column {
-			flex: 1;
+			/* flex: 1; */
 			margin: 10px;
 			/* border: 1px solid; */
 
@@ -1369,6 +1386,7 @@ footer {
 				flex: 1 1 10%;
 				align-self: end;
 			}
+
 			&:last-child {
 				flex: 1 1 10%;
 				/* align-self: end; */
@@ -1392,7 +1410,7 @@ footer {
 					text-decoration: none;
 
 					&:hover {
-						text-decoration: line-through;
+						text-decoration: underline;
 					}
 				}
 			}
@@ -1454,9 +1472,26 @@ footer {
 
 @media (max-width: 1024px) {
 	footer {
+		.footer-container {
+			padding-top: 2rem;
+		}
 		.footer-column {
+			justify-content: start;
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+
 			img {
-				width: 150px;
+				width: 70%;
+			}
+
+			.footer-img-img {
+				align-self: center;
+			}
+
+			.footer-quick-links {
+				justify-content: space-between;
+				gap: 4rem;
 			}
 		}
 	}
@@ -2188,18 +2223,49 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 4rem;
+	/* gap: 4rem; */
 	/* margin-block: 3rem; */
 	padding-inline: 12rem;
 	padding-block: 5rem;
 
+	.exco-one {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+
+		.esco-content {
+			display: flex;
+			flex-direction: column;
+			/* gap: rem; */
+
+			h2 {
+				font-size: 1.3rem;
+			}
+			.esco-position {
+				p {
+					font-size: 1rem;
+					margin: 10px;
+					span {
+						font-weight: 500;
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+	}
+
 	img {
-		width: 30%;
+		width: 35%;
 	}
 
 	.excos-content {
 		line-height: 30px;
 	}
+}
+
+.exco-one-reverse{
+	background-color: #f9f9f9;
 }
 
 .excos-container-row {
@@ -2251,4 +2317,47 @@ footer {
 		padding-block: 4rem;
 		padding-inline: 1rem;
 	}
+}
+
+.fundraise-bread {
+	background-image: url(img/fundraise-bread.png);
+}
+
+.raise-hand-container {
+	padding-inline: 10rem;
+	margin-block: 5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.navigate-arrow {
+		border: 2px solid black;
+		border-radius: 50%;
+		padding: 0.8rem 1rem;
+		cursor: pointer;
+		font-size: 20px;
+
+		&:hover {
+			background-color: #2708a5;
+			color: #fff;
+			border-color: #fff;
+		}
+	}
+}
+
+.raise-hand-box {
+	position: relative;
+	padding: 0em calc((100vw - 1250px) / 3);
+	color: #fff;
+	background-image: url(/img/fundraise-img-nav.png);
+	height: 600px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	transition: background-image 1s ease-in-out;
+	z-index: 1;
 }
