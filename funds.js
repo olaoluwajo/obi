@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		updateContent(currentIndex);
 		raiseHandBox.style.transform = "translateX(-100%)";
 		setTimeout(() => (raiseHandBox.style.transform = "translateX(0)"), 0);
+		resetAutoScroll();
 	}
 
 	function scrollRight() {
@@ -48,6 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
 		updateContent(currentIndex);
 		raiseHandBox.style.transform = "translateX(100%)";
 		setTimeout(() => (raiseHandBox.style.transform = "translateX(0)"), 0);
+		resetAutoScroll();
+	}
+
+	let autoScrollInterval = setInterval(scrollRight, 4000);
+
+	function resetAutoScroll() {
+		clearInterval(autoScrollInterval);
+		autoScrollInterval = setInterval(scrollRight, 4000);
 	}
 
 	leftArrow.addEventListener("click", scrollLeft);

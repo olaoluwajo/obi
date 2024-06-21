@@ -14,6 +14,7 @@
 	padding: 0;
 	font-family: "Montserrat", sans-serif;
 	list-style-type: none;
+	scroll-behavior: smooth;
 }
 body {
 	overflow-x: hidden;
@@ -403,6 +404,10 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+	.hero-img-three {
+		display: none;
+	}
+
 	.hero {
 		align-items: center;
 		padding: 0em 1rem;
@@ -2264,7 +2269,7 @@ footer {
 	}
 }
 
-.exco-one-reverse{
+.exco-one-reverse {
 	background-color: #f9f9f9;
 }
 
@@ -2351,13 +2356,104 @@ footer {
 	color: #fff;
 	background-image: url(/img/fundraise-img-nav.png);
 	height: 600px;
+	border-radius: 15px;
+	min-width: 1200px;
+	max-width: 1200px;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: start;
+	align-items: center;
 	transition: background-image 1s ease-in-out;
 	z-index: 1;
+	gap: 1rem;
+
+	.h2 {
+		display: flex;
+		gap: 10px;
+		background: #2708a590;
+		padding: 1.2rem 2rem;
+		border-radius: 10px;
+		font-weight: 600;
+		font-size: 24px;
+	}
+	p {
+		font-size: 18px;
+		max-width: 75%;
+		text-align: center;
+		line-height: 32px;
+		font-weight: 600;
+	}
+}
+
+.curr-programs-section {
+	padding-block: 2rem;
+	padding-inline: calc((100vw - 1100px) / 3);
+
+	h2 {
+		font-weight: 600;
+		font-size: 45px;
+	}
+
+	p {
+		font-size: 16px;
+		line-height: 28px;
+		margin-block: 1rem;
+	}
+
+	.curr-programs-box {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 6rem;
+		margin-top: 2rem;
+
+		.curr-box {
+			display: flex;
+			flex-direction: column;
+			/* width: 50%; */
+
+			img {
+				width: 100%;
+			}
+
+			.curr-box-content {
+				margin-top: 2rem;
+
+				h2 {
+					font-size: 40px;
+				}
+				p {
+					font-size: 15px;
+				}
+
+				button {
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+}
+
+.fundraise-challenge {
+	p {
+		margin-block: 0;
+		padding-top: 1rem;
+	}
+}
+
+.fundraise-donation {
+	background-image: url(img/fundraise-donation.png);
+	p {
+		margin: 0 auto;
+		font-size: 25px;
+		width: 70%;
+		text-align: center;
+	}
+}
+
+.fundraise-program {
+	padding-block: 3rem;
 }
